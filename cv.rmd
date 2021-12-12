@@ -4,12 +4,23 @@ author: Juan C. Sanchez-Arias
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
-    value: true
+    value: false
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
 ---
+
+<!-- This chunk from rlesur post at RStudio Community Forum (https://community.rstudio.com/t/pagedown-resume-with-one-page-aside-pagedown-0-14/103299/2?u=rlesur) -->
+
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
@@ -28,7 +39,6 @@ CV <- create_CV_object(
 
 ```
 
-
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
 if(params$pdf_mode) {
@@ -41,7 +51,6 @@ if(params$pdf_mode) {
 }
 ```
 
-
 Aside
 ================================================================================
 
@@ -51,24 +60,21 @@ Aside
 # datadrivencv::build_network_logo(CV$entries_data)
 ```
 
-```{r}
-if(params$pdf_mode){
-  cat("View this CV online with links at _htpss://www.juansanar.com/cv")
-} else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](www.juansanar.com/_cv.pdf)")
-}
-```
-
 ![](https://www.juansanar.com/img/juansanar_pro-pic_02_165kb.jpg)
 
 Contact {#contact}
 --------------------------------------------------------------------------------
-
 ```{r}
 CV %>% print_contact_info()
 ```
 
-
+```{r}
+if(params$pdf_mode){
+  cat("View this [CV online](htpss://www.juansanar.com/cv)")
+} else {
+  cat("[<i class='fas fa-download'></i> PDF version of this CV](https://www.juansanar.com/files/juansanar_cv.pdf)")
+}
+```
 
 Technical Skills {#skills}
 --------------------------------------------------------------------------------
@@ -77,23 +83,19 @@ Technical Skills {#skills}
 CV %>% print_skill_bars()
 ```
 
-
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+<!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
 
 <!-- Source code forked from [github.com/nstrayer/datadrivencv](https://github.com/nstrayer/datadrivencv) and available at [github.com/juansanar/datadrivencv](github.com/juansanar/datadrivencv). -->
 
-<!-- Last updated on `r Sys.Date()`. -->
-
-
+Last updated on `r Sys.Date()`.
 
 Main
 ================================================================================
 
-Juan C. Sanchez-Arias {#title}
+Juan C. Sanchez-Arias, MD, PhD {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -101,16 +103,12 @@ Juan C. Sanchez-Arias {#title}
 CV %<>% print_text_block("intro") 
 ```
 
-
-
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %<>% print_section('education')
 ```
-
-
 
 Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
@@ -120,89 +118,94 @@ CV %<>% print_section('research_positions')
 ```
 
 <!-- These breaks just force a new page so section doesn't get cut off -->
-<br>
-<br>
-<br>
+<!-- <br> -->
+<!-- <br> -->
+<!-- <br> -->
+
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('research_interests') -->
+<!-- ``` -->
+<!-- ::: -->
 
 <!-- Industry Experience {data-icon=suitcase} -->
 <!-- -------------------------------------------------------------------------------- -->
 
-::: aside
-```{r}
-CV %<>% print_text_block('industy_experience_aside')
-```
-:::
 
 <!-- ```{r} -->
 <!-- CV %<>% print_section('industry_positions') -->
 <!-- ``` -->
 
-<!-- <!-- These breaks just force a new page so section doesn't get cut off --> -->
+<!-- These breaks just force a new page so section doesn't get cut off -->
 <!-- <br> -->
 <!-- <br> -->
 <!-- <br> -->
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
-
-::: aside
-```{r}
-CV %<>% print_text_block('teaching_experience_aside')
-```
-:::
-
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
-
-
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('teaching_philosophy') -->
+<!-- ``` -->
+<!-- ::: -->
 
 <!-- Selected Data Science Writing {data-icon=chart-line} -->
 <!-- -------------------------------------------------------------------------------- -->
-
 <!-- ::: aside -->
 <!-- ```{r} -->
 <!-- CV %<>% print_text_block('data_science_writing_aside') -->
 <!-- ``` -->
 <!-- ::: -->
-
 <!-- ```{r} -->
 <!-- CV %<>% print_section('data_science_writings') -->
 <!-- ``` -->
-
-
-
 <!-- Selected Press (About)  {data-icon=newspaper} -->
 <!-- -------------------------------------------------------------------------------- -->
-
 <!-- ```{r} -->
 <!-- CV %<>% print_section('about_me_press') -->
 <!-- ``` -->
-
-
 <!-- <br> -->
 <!-- <br> -->
-
-
-<!-- Selected Press (By)  {data-icon=newspaper} -->
-<!-- -------------------------------------------------------------------------------- -->
-
-<!-- ```{r} -->
-<!-- CV %<>% print_section('by_me_press') -->
-<!-- ``` -->
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
+Service & Leadership  {data-icon=hands-helping}
 --------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('service')
+```
+<!-- ::: aside -->
+<!-- ```{r} -->
+<!-- CV %<>% print_text_block('quote') -->
+<!-- ``` -->
+<!-- ::: -->
 
+Awards {data-icon=award}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('awards')
+```
+
+Selected Publications {data-icon=book}
+--------------------------------------------------------------------------------
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
 
-
-
 ```{r}
 # CV %<>% print_links()
+```
+
+Datasets {data-icon=database}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('datasets')
+```
+
+
+Society Memberships {data-icon=users}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('memberships')
 ```
 

@@ -35,8 +35,8 @@ sup {
 
 /* Customize some of the sizing variables */
 :root {
-  --sidebar-width: 12rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #f7fbff; /* Make sidebar blue */
+  --sidebar-width: 10rem; /* Shrink sidebar width -originally 12rem*/
+  --sidebar-background-color: #f2f6fa; /* Make sidebar blue grey */
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
   --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
   --decorator-border: 2px solid #bdd7e7; /* Make timeline a blue as well*/
@@ -102,7 +102,7 @@ sup {
 }
 
 
-/* When the class no-timeline is added we remove the after psuedo element from the header... */
+/* When the class no-timeline is added we remove the after pseudo element from the header... */
 
 /* Removes the psuedo element on h2 tags for this section */
 .section.no-timeline h2::after {
@@ -111,7 +111,7 @@ sup {
 
 /* Without adding padding the content is all up on the title */
 .section.no-timeline h2 {
-  padding-bottom: 1rem;
+  padding-bottom: 1rem; /* originally 1rem*/
 }
 
 /* Add styles for little cards  */
@@ -121,4 +121,15 @@ sup {
   padding: 0.5rem;
   margin: 0.5rem;
   box-shadow: 1px 1px 4px black;
+}
+
+/* Add numbering to pages*/
+.pagedjs_margin-top-left-corner {
+  visibility: unset !important;
+}
+.pagedjs_margin-top-left-corner>.pagedjs_margin-content::after {
+  content: counter(page);
+  position: absolute;
+  top: 8px;
+  left: 10px;
 }
