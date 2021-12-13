@@ -14,12 +14,12 @@ output:
 <!-- This chunk from rlesur post at RStudio Community Forum (https://community.rstudio.com/t/pagedown-resume-with-one-page-aside-pagedown-0-14/103299/2?u=rlesur) -->
 
 ```{css, echo=FALSE}
-.pagedjs_page:not(:first-of-type) {
-  --sidebar-width: 0rem;
-  --sidebar-background-color: #ffffff;
-  --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --decorator-horizontal-margin: 0.2in;
-}
+# .pagedjs_page:not(:first-of-type) {
+#   --sidebar-width: 0rem;
+#   --sidebar-background-color: #ffffff;
+#   --main-width: calc(var(--content-width) - var(--sidebar-width));
+#   --decorator-horizontal-margin: 0.2in;
+# }
 ```
 
 ```{r, include=FALSE}
@@ -86,9 +86,9 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-<!-- Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
-<!-- Source code forked from [github.com/nstrayer/datadrivencv](https://github.com/nstrayer/datadrivencv) and available at [github.com/juansanar/datadrivencv](github.com/juansanar/datadrivencv). -->
+Source code forked from [nstrayer/datadrivencv<i class="fab fa-github"></i>](https://github.com/nstrayer/datadrivencv) and available at [juansanar/datadrivencv<i class="fab fa-github"></i>](https://github.com/juansanar/datadrivencv).
 
 Last updated on `r Sys.Date()`.
 
@@ -122,11 +122,41 @@ CV %<>% print_section('research_positions')
 <!-- <br> -->
 <!-- <br> -->
 
-<!-- ::: aside -->
-<!-- ```{r} -->
-<!-- CV %<>% print_text_block('research_interests') -->
-<!-- ``` -->
-<!-- ::: -->
+::: aside
+
+#### <i class="fas fa-search-plus"></i> Research interests
+
+<i class="fas fa-stethoscope"></i> Translational research
+
+<i class="fas fa-images"></i> Bio-image analysis
+
+<i class="fas fa-heartbeat"></i> Neuronal and cardiac physiology
+
+<i class="fas fa-server"></i> Bioinformatics
+
+<i class="fas fa-dna"></i> Clinical genetics
+
+<i class="fab fa-creative-commons-sa"></i> Open science.
+
+<br>
+
+#### <i class="fas fa-lightbulb"></i> Teaching philosophy
+
+I strive to foster an active learning and respectful environment for students in which each student has equal opportunity to exchange ideas and ask questions. I believe that discussing ideas is key for developing critical thinking, communication skills, and an inquisitive mind; while providing immediate feedback on students' understanding of the discussed topic.
+
+<br>
+
+#### <i class="fas fa-users"></i> Society memberships
+
+Canadian Cardiovascular Society
+
+Canadian Association of Neuroscience
+
+Society for Neuroscience
+
+Colegio Colombiano de Neurociencias - COLNE
+
+:::
 
 <!-- Industry Experience {data-icon=suitcase} -->
 <!-- -------------------------------------------------------------------------------- -->
@@ -146,29 +176,7 @@ Teaching Experience {data-icon=chalkboard-teacher}
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
-<!-- ::: aside -->
-<!-- ```{r} -->
-<!-- CV %<>% print_text_block('teaching_philosophy') -->
-<!-- ``` -->
-<!-- ::: -->
 
-<!-- Selected Data Science Writing {data-icon=chart-line} -->
-<!-- -------------------------------------------------------------------------------- -->
-<!-- ::: aside -->
-<!-- ```{r} -->
-<!-- CV %<>% print_text_block('data_science_writing_aside') -->
-<!-- ``` -->
-<!-- ::: -->
-<!-- ```{r} -->
-<!-- CV %<>% print_section('data_science_writings') -->
-<!-- ``` -->
-<!-- Selected Press (About)  {data-icon=newspaper} -->
-<!-- -------------------------------------------------------------------------------- -->
-<!-- ```{r} -->
-<!-- CV %<>% print_section('about_me_press') -->
-<!-- ``` -->
-<!-- <br> -->
-<!-- <br> -->
 Service & Leadership  {data-icon=hands-helping}
 --------------------------------------------------------------------------------
 ```{r}
@@ -180,21 +188,71 @@ CV %<>% print_section('service')
 <!-- ``` -->
 <!-- ::: -->
 
+:::aside
+#### Selected presentations
+**2021**
+
+<i class="fas fa-microphone"></i> **COLNE - Tertulia Metodologica** | Flujos de Trabajo para Analisis de Imagenes Adquiridas por Microscopia (Bio-image analysis workflows) | *Talk*
+
+<i class="fas fa-chalkboard-teacher"></i> **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Poster*
+
+**2020**
+
+<i class="fas fa-microphone"></i> **University of British Columbia 2<sup>nd</sup> Annual Tri‑Cluster Research Day: The Future of Health** | Pannexin 1 regulates dendritic protrusion dynamic in developing cortical neurons | *Talk*
+
+**2019**
+
+<i class="fas fa-microphone"></i> **International Gap Junction Conference** | Pannexin 1 regulates neuronal networks and dendritic spine formation in cortical neurons | *Star Award Talk*
+
+<i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons | *Poster*
+
+**2018**
+
+<i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster*
+
+**2017**
+
+<i class="fas fa-microphone"></i> **BC Regenerative Medicine Symposium** | Pannexin 1 regulates cortical dendritic spine formation | *Talk*
+
+<!-- ##### 2015 -->
+<!-- <i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Investigation of Pannexin 1 in the response of developing neurons to stroke | *Poster* -->
+:::
+
 Awards {data-icon=award}
 --------------------------------------------------------------------------------
 ```{r}
 CV %<>% print_section('awards')
 ```
 
-Selected Publications {data-icon=book}
+<!-- :::aside -->
+<!-- #### <i class="fas fa-chalkboard-teacher"></i> Selected poster presentations -->
+<!-- ##### 2021 -->
+<!-- **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons. -->
+
+<!-- ##### 2019 -->
+<!-- **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons. -->
+
+<!-- ##### 2018 -->
+<!-- **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function. -->
+
+<!-- ##### 2016 -->
+<!-- **Canadian Developmental Biology Conference - Sattelite Symposium on Forebrain Neurogenesis** | A pannexin 1 blocker modulates the development of dendritic spines in the postnatal cerebral cortex. -->
+
+<!-- ##### 2015 -->
+<!-- **Canadian Association of Neuroscience Meeting** | Investigation of Pannexin 1 in the response of developing neurons to stroke. -->
+<!-- ::: -->
+
+Publications {data-icon=book}
 --------------------------------------------------------------------------------
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
 
+:::aside
 ```{r}
-# CV %<>% print_links()
+CV %<>% print_text_block('quote')
 ```
+:::
 
 Datasets {data-icon=database}
 --------------------------------------------------------------------------------
@@ -202,10 +260,9 @@ Datasets {data-icon=database}
 CV %<>% print_section('datasets')
 ```
 
-
-Society Memberships {data-icon=users}
---------------------------------------------------------------------------------
-```{r}
-CV %<>% print_section('memberships')
-```
+<!-- Society Memberships {data-icon=users} -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- ```{r} -->
+<!-- CV %<>% print_section('memberships') -->
+<!-- ``` -->
 
