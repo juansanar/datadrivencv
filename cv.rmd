@@ -148,6 +148,8 @@ I strive to foster an active learning and respectful environment for students in
 
 #### <i class="fas fa-users"></i> Society memberships
 
+Canadian Society for Molecular Bioscience
+
 Canadian Cardiovascular Society
 
 Canadian Association of Neuroscience
@@ -260,6 +262,11 @@ Datasets {data-icon=database}
 CV %<>% print_section('datasets')
 ```
 
+Other education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('other_education')
+```
 <!-- Society Memberships {data-icon=users} -->
 <!-- -------------------------------------------------------------------------------- -->
 <!-- ```{r} -->
