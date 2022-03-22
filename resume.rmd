@@ -74,7 +74,7 @@ CV %>% print_contact_info()
 # } else {
 #   cat("[<i class='fas fa-download'></i> PDF version of this CV](https://www.juansanar.com/files/juansanar_cv.pdf)")
 # }
-cat("View this [CV online](htpss://www.juansanar.com/cv)")
+cat("View my full [CV online](htpss://www.juansanar.com/cv)")
 ```
 
 Technical Skills {#skills}
