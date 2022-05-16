@@ -118,3 +118,8 @@ Research Experience {data-icon=laptop}
 CV %<>% print_section('research_positions')
 ```
 
+Service & Leadership  {data-icon=hands-helping}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('service')
+```

@@ -1,9 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
 
+/* Importing additional fonts - 
+lines of code from https://github.com/beatrizmilz/resume/blob/master/docs/custom.css*/
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;400&display=swap');
+
 @page{
   size: letter portrait;
-  margin-top: 0.15in;
-  margin-bottom: 0.15in;
+  margin-top: 0.3in;
+  margin-bottom: 0.3in;
 }
 
 /* Main text is monserrat*/
@@ -14,18 +19,30 @@ body {
   color: #444;
 }
 
-/* Give headers playfair font */
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", serif;
+/* Customize headers */
+h1 {
+  font-family: 'Spartran', sans-serif;
   color: #000;
-  font-size: 0.5rem;
+  font-size: 0.8rem;
+}
+
+h2{
+  font-family: 'Spartan', sans-serif;
+ 	font-weight: 400;
+	font-size: 0.6rem;
+	color: #444; 
+/*	text-transform: uppercase;*/
+}
+
+h3 {
+  font-family: "Spartan", serif;
+  color: #000;
+  font-size: 0.4rem;
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
 sup {
-  font-size: 0.4rem;/*0.45*/
+  font-size: 0.45rem;/*0.45*/
   font-style: italic;
 }
 
