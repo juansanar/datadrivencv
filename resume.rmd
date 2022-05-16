@@ -123,3 +123,9 @@ Service & Leadership  {data-icon=hands-helping}
 ```{r}
 CV %<>% print_section('service')
 ```
+
+Other education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('other_education')
+```
