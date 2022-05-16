@@ -118,6 +118,38 @@ Research Experience {data-icon=laptop}
 CV %<>% print_section('research_positions')
 ```
 
+:::aside
+#### Selected presentations
+**2022**
+
+<i class="fas fa-chalkboard-teacher"></i> **65<sup>th</sup> Annual Meeting of the Canadian Society for Molecular Biosciences** | An integrative systems biology and experimental approach to study the impact of a novel variant in ANK2 membrane-binding domain associated with cardiac arrhythmia and cardiomyopathy | *Poster*
+
+**2021**
+
+<i class="fas fa-microphone"></i> **COLNE - Tertulia Metodologica** | Flujos de Trabajo para Analisis de Imagenes Adquiridas por Microscopia (Bio-image analysis workflows) | *Talk*
+
+<!-- <i class="fas fa-chalkboard-teacher"></i> **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Poster* -->
+
+**2020**
+
+<i class="fas fa-microphone"></i> **University of British Columbia 2<sup>nd</sup> Annual Tri‑Cluster Research Day: The Future of Health** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Talk*
+
+**2019**
+
+<i class="fas fa-microphone"></i> **International Gap Junction Conference** | Pannexin 1 regulates neuronal networks and dendritic spine formation in cortical neurons | *Star Award Talk*
+
+<!-- <i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons | *Poster* -->
+
+**2018**
+
+<i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster*
+
+**2017**
+
+<i class="fas fa-microphone"></i> **BC Regenerative Medicine Symposium** | Pannexin 1 regulates cortical dendritic spine formation | *Talk*
+
+:::
+
 Service & Leadership  {data-icon=hands-helping}
 --------------------------------------------------------------------------------
 ```{r}
