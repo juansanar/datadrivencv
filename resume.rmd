@@ -1,5 +1,5 @@
 ---
-title: "Juan C. Sanchez-Arias's 1-page resume"
+title: "Juan C. Sanchez-Arias's 2-page resume"
 author: Juan C. Sanchez-Arias
 date: "`r Sys.Date()`"
 params:
@@ -20,6 +20,7 @@ output:
 #   --main-width: calc(var(--content-width) - var(--sidebar-width));
 #   --decorator-horizontal-margin: 0.2in;
 # }
+
 ```
 
 ```{r, include=FALSE}
@@ -60,7 +61,7 @@ Aside
 # datadrivencv::build_network_logo(CV$entries_data)
 ```
 
-![](https://www.juansanar.com/img/juansanar_pro-pic_02_165kb.jpg)
+![Juan C. Sanchez-Arias](https://www.juansanar.com/img/juansanar_pro-pic_02_165kb.jpg){style='border-radius: 50%;'}
 
 Contact {#contact}
 --------------------------------------------------------------------------------
@@ -111,6 +112,13 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section('education')
 ```
 
+Industry Experience {data-icon=pills}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('industry_positions')
+```
+
 Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
@@ -122,7 +130,7 @@ CV %<>% print_section('research_positions')
 #### Selected presentations
 **2022**
 
-<i class="fas fa-chalkboard-teacher"></i> **65<sup>th</sup> Annual Meeting of the Canadian Society for Molecular Biosciences** | An integrative systems biology and experimental approach to study the impact of a novel variant in ANK2 membrane-binding domain associated with cardiac arrhythmia and cardiomyopathy | *Poster*
+<i class="fas fa-chalkboard-teacher"></i> **65<sup>th</sup> Annual Meeting of the Canadian Society for Molecular Biosciences** | An integrative systems biology and experimental approach to study the impact of a novel variant in ANK2 membrane-binding domain associated with cardiac arrhythmias and cardiomyopathy | *Poster*
 
 **2021**
 
@@ -140,14 +148,13 @@ CV %<>% print_section('research_positions')
 
 <!-- <i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons | *Poster* -->
 
-**2018**
+<!-- **2018** -->
 
-<i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster*
+<!-- <i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster* -->
 
 **2017**
 
 <i class="fas fa-microphone"></i> **BC Regenerative Medicine Symposium** | Pannexin 1 regulates cortical dendritic spine formation | *Talk*
-
 :::
 
 Service & Leadership  {data-icon=hands-helping}
