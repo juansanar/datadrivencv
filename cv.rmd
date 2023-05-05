@@ -1,26 +1,15 @@
 ---
-title: "Juan C. Sanchez-Arias's CV"
-author: Juan C. Sanchez-Arias
+title: "Nick Strayer's CV"
+author: Nick Strayer
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
-    value: false
+    value: true
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
     self_contained: true
 ---
-
-<!-- This chunk from rlesur post at RStudio Community Forum (https://community.rstudio.com/t/pagedown-resume-with-one-page-aside-pagedown-0-14/103299/2?u=rlesur) -->
-
-```{css, echo=FALSE}
-# .pagedjs_page:not(:first-of-type) {
-#   --sidebar-width: 0rem;
-#   --sidebar-background-color: #ffffff;
-#   --main-width: calc(var(--content-width) - var(--sidebar-width));
-#   --decorator-horizontal-margin: 0.2in;
-# }
-```
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
@@ -33,11 +22,12 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/138F1HajlNNCVZ3AzNhq6XFXonENJ0qpysyNW2i9RJeY",  
+  data_location = "https://docs.google.com/spreadsheets/d/1KMMsMr8HHBrHOOdWYnJ5kdN8lMc59zw2fer9elIoN0g/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
 ```
+
 
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
@@ -51,57 +41,66 @@ if(params$pdf_mode) {
 }
 ```
 
+
 Aside
 ================================================================================
 
 ```{r}
 # Build interactive network of positions colored by section
 # and connected if they occurred in the same year
-# datadrivencv::build_network_logo(CV$entries_data)
+datadrivencv::build_network_logo(CV$entries_data)
 ```
 
-![Juan C. Sanchez-Arias](https://www.juansanar.com/img/juansanar_pro-pic_02_165kb.jpg){style='border-radius: 50%;'}
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at _https://www.juansanar.com/files/juansanar_resume_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/juansanar/datadrivencv/juansanar_resume.pdf)")
+}
+```
 
 Contact {#contact}
 --------------------------------------------------------------------------------
+
 ```{r}
 CV %>% print_contact_info()
 ```
 
-```{r}
-if(params$pdf_mode){
-  cat("View this [CV online](htpss://www.juansanar.com/cv)")
-} else {
-  cat("[<i class='fas fa-download'></i> CV's PDF version](https://www.juansanar.com/files/juansanar_cv.pdf)")
-}
-```
 
-Technical Skills {#skills}
+
+Language Skills {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %>% print_skill_bars()
 ```
 
+
+
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-Source code forked from [nstrayer/datadrivencv<i class="fab fa-github"></i>](https://github.com/nstrayer/datadrivencv) and available at [juansanar/datadrivencv<i class="fab fa-github"></i>](https://github.com/juansanar/datadrivencv).
+The source code is available [on github.com/nstrayer/cv](https://github.com/juansanar/datadrivencv).
 
 Last updated on `r Sys.Date()`.
+
+
 
 Main
 ================================================================================
 
-Juan C. Sanchez-Arias, MD, PhD {#title}
+Nick Strayer {#title}
 --------------------------------------------------------------------------------
 
 ```{r}
 # Note the special double pipe so we modify the CV object in place
 CV %<>% print_text_block("intro") 
 ```
+
+
 
 Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
@@ -110,12 +109,7 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section('education')
 ```
 
-Industry Experience {data-icon=pills}
---------------------------------------------------------------------------------
 
-```{r}
-CV %<>% print_section('industry_positions')
-```
 
 Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
@@ -124,160 +118,87 @@ Research Experience {data-icon=laptop}
 CV %<>% print_section('research_positions')
 ```
 
-<!-- These breaks just force a new page so section doesn't get cut off -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
+
+
+Industry Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
 
 ::: aside
-
-#### <i class="fas fa-search-plus"></i> Research interests
-
-<i class="fas fa-stethoscope"></i> Translational research
-
-<i class="fas fa-images"></i> Bio-image analysis
-
-<i class="fas fa-heartbeat"></i> Neuronal and cardiac physiology
-
-<i class="fas fa-server"></i> Bioinformatics
-
-<i class="fas fa-dna"></i> Clinical genetics
-
-<i class="fab fa-creative-commons-sa"></i> Open science.
-
-<br>
-
-#### <i class="fas fa-lightbulb"></i> Teaching philosophy
-
-I strive to foster an active learning and respectful environment for students in which each student has equal opportunity to exchange ideas and ask questions. I believe that discussing ideas is key for developing critical thinking, communication skills, and an inquisitive mind; while providing immediate feedback on students' understanding of the discussed topic.
-
-<br>
-
-#### <i class="fas fa-users"></i> Society memberships
-
-Canadian Society for Molecular Bioscience
-
-Canadian Cardiovascular Society
-
-Canadian Association of Neuroscience
-
-Society for Neuroscience
-
-Colegio Colombiano de Neurociencias - COLNE
-
+```{r}
+CV %<>% print_text_block('industy_experience_aside')
+```
 :::
 
-<!-- Industry Experience {data-icon=suitcase} -->
-<!-- -------------------------------------------------------------------------------- -->
+```{r}
+CV %<>% print_section('industry_positions')
+```
 
-
-<!-- ```{r} -->
-<!-- CV %<>% print_section('industry_positions') -->
-<!-- ``` -->
-
-<!-- These breaks just force a new page so section doesn't get cut off -->
-<!-- <br> -->
-<!-- <br> -->
-<!-- <br> -->
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
+<br>
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block('teaching_experience_aside')
+```
+:::
+
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
 
-Service & Leadership  {data-icon=hands-helping}
+
+
+Selected Data Science Writing {data-icon=chart-line}
 --------------------------------------------------------------------------------
+
+::: aside
 ```{r}
-CV %<>% print_section('service')
+CV %<>% print_text_block('data_science_writing_aside')
 ```
-
-:::aside
-\pagebreak
-<br>
-
-#### Selected presentations
-**2021**
-
-<i class="fas fa-microphone"></i> **COLNE - Tertulia Metodologica** | Flujos de Trabajo para Analisis de Imagenes Adquiridas por Microscopia (Bio-image analysis workflows) | *Talk*
-
-<i class="fas fa-chalkboard-teacher"></i> **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Poster*
-
-**2020**
-
-<i class="fas fa-microphone"></i> **University of British Columbia 2<sup>nd</sup> Annual Tri‑Cluster Research Day: The Future of Health** | Pannexin 1 regulates dendritic protrusion dynamic in developing cortical neurons | *Talk*
-
-**2019**
-
-<i class="fas fa-microphone"></i> **International Gap Junction Conference** | Pannexin 1 regulates neuronal networks and dendritic spine formation in cortical neurons | *Star Award Talk*
-
-<i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons | *Poster*
-
-**2018**
-
-<i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster*
-
-**2017**
-
-<i class="fas fa-microphone"></i> **BC Regenerative Medicine Symposium** | Pannexin 1 regulates cortical dendritic spine formation | *Talk*
-
-**2015**
-
-<i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Investigation of Pannexin 1 in the response of developing neurons to stroke | *Poster*
-
-<br>
 :::
 
-Awards {data-icon=award}
---------------------------------------------------------------------------------
 ```{r}
-CV %<>% print_section('awards')
+CV %<>% print_section('data_science_writings')
 ```
 
-<!-- :::aside -->
-<!-- #### <i class="fas fa-chalkboard-teacher"></i> Selected poster presentations -->
-<!-- ##### 2021 -->
-<!-- **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons. -->
 
-<!-- ##### 2019 -->
-<!-- **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons. -->
 
-<!-- ##### 2018 -->
-<!-- **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function. -->
-
-<!-- ##### 2016 -->
-<!-- **Canadian Developmental Biology Conference - Sattelite Symposium on Forebrain Neurogenesis** | A pannexin 1 blocker modulates the development of dendritic spines in the postnatal cerebral cortex. -->
-
-<!-- ##### 2015 -->
-<!-- **Canadian Association of Neuroscience Meeting** | Investigation of Pannexin 1 in the response of developing neurons to stroke. -->
-<!-- ::: -->
-
-Publications {data-icon=book}
+Selected Press (About)  {data-icon=newspaper}
 --------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('about_me_press')
+```
+
+
+<br>
+<br>
+
+
+Selected Press (By)  {data-icon=newspaper}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('by_me_press')
+```
+
+
+
+Selected Publications, Posters, and Talks {data-icon=book}
+--------------------------------------------------------------------------------
+
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
 
-:::aside
-```{r}
-CV %<>% print_text_block('quote')
-```
-:::
 
-Datasets {data-icon=database}
---------------------------------------------------------------------------------
-```{r}
-CV %<>% print_section('datasets')
-```
 
-Other education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
 ```{r}
-CV %<>% print_section('other_education')
+CV %<>% print_links()
 ```
-<!-- Society Memberships {data-icon=users} -->
-<!-- -------------------------------------------------------------------------------- -->
-<!-- ```{r} -->
-<!-- CV %<>% print_section('memberships') -->
-<!-- ``` -->
 

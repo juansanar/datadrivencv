@@ -34,7 +34,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1KMMsMr8HHBrHOOdWYnJ5kdN8lMc59zw2fer9elIoN0g/edit#gid=917338460",  
+  data_location = "https://docs.google.com/spreadsheets/d/1KMMsMr8HHBrHOOdWYnJ5kdN8lMc59zw2fer9elIoN0g/edit?usp=sharing",  
   pdf_mode = params$pdf_mode
 )
 
@@ -105,13 +105,6 @@ Juan C. Sanchez-Arias, MD, PhD {#title}
 CV %<>% print_text_block("intro") 
 ```
 
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('education')
-```
-
 Industry Experience {data-icon=pills}
 --------------------------------------------------------------------------------
 
@@ -119,7 +112,14 @@ Industry Experience {data-icon=pills}
 CV %<>% print_section('industry_positions')
 ```
 
-Research Experience {data-icon=laptop}
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+Research Experience {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -127,34 +127,9 @@ CV %<>% print_section('research_positions')
 ```
 
 :::aside
-#### Selected presentations
-**2022**
-
-<i class="fas fa-chalkboard-teacher"></i> **65<sup>th</sup> Annual Meeting of the Canadian Society for Molecular Biosciences** | An integrative systems biology and experimental approach to study the impact of a novel variant in ANK2 membrane-binding domain associated with cardiac arrhythmias and cardiomyopathy | *Poster*
-
-**2021**
-
-<i class="fas fa-microphone"></i> **COLNE - Tertulia Metodologica** | Flujos de Trabajo para Analisis de Imagenes Adquiridas por Microscopia (Bio-image analysis workflows) | *Talk*
-
-<!-- <i class="fas fa-chalkboard-teacher"></i> **SfN Global Connectome 2021** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Poster* -->
-
-**2020**
-
-<i class="fas fa-microphone"></i> **University of British Columbia 2<sup>nd</sup> Annual Tri‑Cluster Research Day: The Future of Health** | Pannexin 1 regulates dendritic protrusion dynamics in developing cortical neurons | *Talk*
-
-**2019**
-
-<i class="fas fa-microphone"></i> **International Gap Junction Conference** | Pannexin 1 regulates neuronal networks and dendritic spine formation in cortical neurons | *Star Award Talk*
-
-<!-- <i class="fas fa-chalkboard-teacher"></i> **Canadian Association of Neuroscience Meeting** | Pannexin 1 regulates network ensembles and dendritic spine development in cortical somatosensory neurons | *Poster* -->
-
-<!-- **2018** -->
-
-<!-- <i class="fas fa-chalkboard-teacher"></i> **Society for Neuroscience** | Pannexin 1 regulates somatosensory pyramidal neuron dendritic spine density and sensorimotor function | *Poster* -->
-
-**2017**
-
-<i class="fas fa-microphone"></i> **BC Regenerative Medicine Symposium** | Pannexin 1 regulates cortical dendritic spine formation | *Talk*
+```{r}
+CV %<>% print_text_block('leadership_philosophy')
+```
 :::
 
 Service & Leadership  {data-icon=hands-helping}
@@ -163,8 +138,8 @@ Service & Leadership  {data-icon=hands-helping}
 CV %<>% print_section('service')
 ```
 
-Other education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
-```{r}
-CV %<>% print_section('other_education')
-```
+<!-- Other education {data-icon=graduation-cap data-concise=true} -->
+<!-- -------------------------------------------------------------------------------- -->
+<!-- ```{r} -->
+<!-- CV %<>% print_section('other_education') -->
+<!-- ``` -->
